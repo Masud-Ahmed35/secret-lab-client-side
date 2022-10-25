@@ -1,16 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Login = () => {
+const Register = () => {
     return (
         <div>
             <div className=" mt-10 flex flex-col max-w-md mx-auto p-6 rounded-md sm:p-10 bg-gray-800 text-gray-100">
                 <div className="mb-8 text-center">
-                    <h1 className="my-3 text-4xl font-bold">Sign in</h1>
-                    <p className="text-sm dark:text-gray-400">Sign in to access your account</p>
+                    <h1 className="my-3 text-4xl font-bold">Sign up</h1>
+                    <p className="text-sm dark:text-gray-400">Sign up to create your account</p>
                 </div>
-                <form novalidate="" action="" className="space-y-8 ng-untouched ng-pristine ng-valid">
+                <form novalidate="" action="" className="space-y-12 ng-untouched ng-pristine ng-valid">
                     <div className="space-y-4">
+                        <div>
+                            <label for="name" className="block mb-2 text-sm">Full Name</label>
+                            <input type="text" name="name" id="name" placeholder="Type Your Name" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 text-gray-900" />
+                        </div>
                         <div>
                             <label for="email" className="block mb-2 text-sm">Email address</label>
                             <input type="email" name="email" id="email" placeholder="example@gmail.com" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 text-gray-900" />
@@ -20,14 +24,11 @@ const Login = () => {
                                 <label for="password" className="text-sm">Password</label>
                             </div>
                             <input type="password" name="password" id="password" placeholder="********" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 text-gray-900" />
-                            <div className="flex justify-end text-xs text-gray-400 mt-1">
-                                <Link to='/'>Forgot Password?</Link>
-                            </div>
                         </div>
                     </div>
-                    <div>
+                    <div className="space-y-2">
                         <div>
-                            <button type="button" className="w-full px-8 py-3 font-semibold rounded-md bg-violet-400 text-gray-900">Sign in</button>
+                            <button type="button" className="w-full px-8 py-3 font-semibold rounded-md bg-violet-400 text-gray-900">Sign up</button>
                         </div>
                         <div className="flex items-center pt-4 space-x-1">
                             <div className="flex-1 h-px sm:w-16 bg-gray-500"></div>
@@ -46,8 +47,8 @@ const Login = () => {
                                 </svg>
                             </button>
                         </div>
-                        <p className="px-6 text-sm text-center dark:text-gray-400">Don't have an account yet?
-                            <Link to='/register' className="hover:underline text-violet-400 ml-1">Sign up</Link>
+                        <p className="px-6 text-sm text-center dark:text-gray-400">Already have an account?
+                            <Link to='/login' className="hover:underline text-violet-400 ml-1">Login</Link>
                         </p>
                     </div>
                 </form>
@@ -56,4 +57,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Register;
