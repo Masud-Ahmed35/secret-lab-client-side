@@ -1,11 +1,14 @@
 import { GoogleAuthProvider } from 'firebase/auth';
-import React from 'react';
+import React, { useState } from 'react';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import toast from 'react-hot-toast'
 
 const Login = () => {
-    const { googleLogin } = useContext(AuthContext);
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const { googleLogin, signIn } = useContext(AuthContext);
 
     const googleProvider = new GoogleAuthProvider();
 
@@ -18,6 +21,27 @@ const Login = () => {
             .catch(error => console.error(error))
     }
 
+    const handleEmail = e => {
+        setEmail(e.target.value);
+    }
+    const handlePassword = e => {
+        setPassword(e.target.value);
+    }
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+
+        signIn(email, password)
+            .then(result => {
+                console.log(result.user);
+                toast.success('Login Successful');
+            })
+            .catch(error => {
+                toast.error(error.message);
+            })
+    }
+
+
     return (
         <div>
             <div className=" mt-10 flex flex-col max-w-md mx-auto p-6 rounded-md sm:p-10 bg-gray-800 text-gray-100">
@@ -29,13 +53,13 @@ const Login = () => {
                     <div className="space-y-4">
                         <div>
                             <label htmlFor="email" className="block mb-2 text-sm">Email address</label>
-                            <input type="email" name="email" id="email" placeholder="example@gmail.com" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 text-gray-900" />
+                            <input onBlur={handleEmail} type="email" name="email" id="email" placeholder="example@gmail.com" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 text-gray-900" required />
                         </div>
                         <div>
                             <div className="mb-2">
                                 <label htmlFor="password" className="text-sm">Password</label>
                             </div>
-                            <input type="password" name="password" id="password" placeholder="********" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 text-gray-900" />
+                            <input onBlur={handlePassword} type="password" name="password" id="password" placeholder="********" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 text-gray-900" required />
                             <div className="flex justify-end text-xs text-gray-400 mt-1">
                                 <Link to='/'>Forgot Password?</Link>
                             </div>
@@ -43,7 +67,12 @@ const Login = () => {
                     </div>
                     <div>
                         <div>
-                            <button type="button" className="w-full px-8 py-3 font-semibold rounded-md bg-violet-400 text-gray-900">Sign in</button>
+                            <button
+                                onClick={handleSubmit}
+                                type="button"
+                                className="w-full px-8 py-3 font-semibold rounded-md bg-violet-400 text-gray-900"
+                            >Sign in
+                            </button>
                         </div>
                         <div className="flex items-center pt-4 space-x-1">
                             <div className="flex-1 h-px sm:w-16 bg-gray-500"></div>

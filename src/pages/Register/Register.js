@@ -1,7 +1,64 @@
 import React from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import toast from 'react-hot-toast'
+import { useContext } from 'react';
+import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const Register = () => {
+    const [name, setName] = useState('');
+    const [photo, setPhoto] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const { createUser } = useContext(AuthContext);
+
+    const handleName = e => {
+        setName(e.target.value);
+    }
+    const handlePhoto = e => {
+        setPhoto(e.target.value);
+    }
+    const handleEmail = e => {
+        const test = /\S+@\S+\.\S+/.test(e.target.value);
+
+        if (!test) {
+            toast.error('Please Provide a Valid Email Address');
+            return;
+        }
+        setEmail(e.target.value);
+    }
+    const handlePassword = e => {
+        if (!/(?=.{8,})/.test(e.target.value)) {
+            toast.error('Password Must be 8 Characters');
+            return;
+        }
+        if (!/(?=.*[a-zA-Z])/.test(e.target.value)) {
+            toast.error('Password should have at least 1 Capital latter.');
+            return;
+        }
+        if (!/(?=.*\d)/.test(e.target.value)) {
+            toast.error('Password should have at least 1 digit.');
+            return;
+        }
+        if (!/(?=.*[!#@$%&? "])/.test(e.target.value)) {
+            toast.error('Password should have at least 1 Special Character');
+            return;
+        }
+        setPassword(e.target.value);
+    }
+
+    const handleSubmit = event => {
+        event.preventDefault();
+        createUser(email, password)
+            .then(result => {
+                console.log(result.user);
+                toast.success('Successfully Create Your Account')
+            })
+            .catch(error => {
+                toast.error(error.message);
+            })
+    }
+
     return (
         <div>
             <div className=" mt-10 flex flex-col max-w-md mx-auto p-6 rounded-md sm:p-10 bg-gray-800 text-gray-100">
@@ -12,23 +69,32 @@ const Register = () => {
                 <form className="space-y-12 ng-untouched ng-pristine ng-valid">
                     <div className="space-y-4">
                         <div>
-                            <label htmlFor="name" className="block mb-2 text-sm">Full Name</label>
-                            <input type="text" name="name" id="name" placeholder="Type Your Name" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 text-gray-900" />
+                            <label htmlFor="Name" className="block mb-2 text-sm">Full Name</label>
+                            <input onBlur={handleName} type="text" name="name" id="Name" placeholder="Type Your Name" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 text-gray-900" required />
+                        </div>
+                        <div>
+                            <label htmlFor="PhotoUrl" className="block mb-2 text-sm">Photo URL</label>
+                            <input onBlur={handlePhoto} type="text" name="photoURL" id="PhotoUrl" placeholder="Enter Your Photo URL" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 text-gray-900" required />
                         </div>
                         <div>
                             <label htmlFor="email" className="block mb-2 text-sm">Email address</label>
-                            <input type="email" name="email" id="email" placeholder="example@gmail.com" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 text-gray-900" />
+                            <input onBlur={handleEmail} type="email" name="email" id="email" placeholder="example@gmail.com" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 text-gray-900" required />
                         </div>
                         <div>
                             <div className="mb-2">
                                 <label htmlFor="password" className="text-sm">Password</label>
                             </div>
-                            <input type="password" name="password" id="password" placeholder="********" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 text-gray-900" />
+                            <input onBlur={handlePassword} type="password" name="password" id="password" placeholder="********" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 text-gray-900" required />
                         </div>
                     </div>
                     <div className="space-y-2">
                         <div>
-                            <button type="button" className="w-full px-8 py-3 font-semibold rounded-md bg-violet-400 text-gray-900">Sign up</button>
+                            <button
+                                onClick={handleSubmit}
+                                type="button"
+                                className="w-full px-8 py-3 font-semibold rounded-md bg-violet-400 text-gray-900">
+                                Sign up
+                            </button>
                         </div>
                         <div className="flex items-center pt-4 space-x-1">
                             <div className="flex-1 h-px sm:w-16 bg-gray-500"></div>
