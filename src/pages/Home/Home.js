@@ -7,7 +7,7 @@ const Home = () => {
             <div className='mt-10'>
                 <div className="bg-violet-100">
                     <div className="container flex flex-col items-center px-4 py-16 pb-24 mx-auto text-center lg:pb-56 md:py-32 md:px-10 lg:px-32 text-gray-900">
-                        <h1 className="text-5xl font-bold leading-none sm:text-6xl xl:max-w-3xl text-gray-900">Trust Yourself <br /><span className='text-4xl sm:text-5xl xl:max-w-2xl'>You Can Code</span></h1>
+                        <h1 className="text-5xl font-bold leading-none sm:text-6xl xl:max-w-3xl text-gray-900">Learn Anytime, Anywhere <br /><span>And</span> <br /><span className='text-4xl sm:text-5xl xl:max-w-2xl'>Accelerate Your Future</span></h1>
                         <p className="mt-6 mb-8 text-lg sm:mb-12 xl:max-w-3xl text-gray-900">It is an online educational platform for 'IT' students. We offer several courses. And there are lot of flexibility and opportunity. You must try this at least ones.</p>
                         <div className="flex flex-wrap justify-center">
                             <button type="button" className="px-8 py-3 m-2 text-lg font-semibold rounded bg-gray-800 text-gray-50">Get started</button>

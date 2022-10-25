@@ -1,7 +1,14 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Course = ({ course }) => {
-    const { img, title, view, ratings, badge } = course;
+    const { id, img, title, view, ratings, badge } = course;
+    const navigate = useNavigate();
+
+    const handleNavigate = () => {
+        navigate(`/courses/${id}`)
+    }
+
     return (
         <div className='ml-5 mb-10 shadow-xl border-4 border-stone-500 rounded-xl hover:border-orange-700'>
             <div className="rounded-md shadow-md bg-gray-100 text-gray-900">
@@ -15,7 +22,7 @@ const Course = ({ course }) => {
                             <p>Views: {view}</p>
                         </div>
                     </div>
-                    <button className="w-full normal-case text-lg font-semibold rounded-md btn btn-outline btn-info">See Details</button>
+                    <button onClick={handleNavigate} className="w-full normal-case text-lg font-semibold rounded-md btn btn-outline btn-info">See Details</button>
                 </div>
             </div>
         </div>
