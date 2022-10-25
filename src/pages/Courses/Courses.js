@@ -1,9 +1,10 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import Course from '../Course/Course';
 
 const Courses = () => {
     const courses = useLoaderData();
-    console.log(courses);
+
     return (
         <div className='divide-x-2 w-[90%] mx-auto mt-10 grid grid-cols-5 '>
             {/* ---------------left side bar-------------*/}
@@ -14,8 +15,13 @@ const Courses = () => {
             </div>
 
             {/* -------------Courses Card Section----------- */}
-            <div className='col-span-4'>
-
+            <div className='col-span-4 grid grid-cols-3'>
+                {
+                    courses.map(course => <Course
+                        key={course.id}
+                        course={course}
+                    ></Course>)
+                }
             </div>
         </div>
     );
