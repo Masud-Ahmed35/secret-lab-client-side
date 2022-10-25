@@ -33,7 +33,7 @@ const Blog = () => {
                     </div>
                     <div className="mt-3">
                         <p className="text-2xl font-bold">Why are you using "firebase"? What other options do you have to implement authentication?</p>
-                        <p className="mt-2">Firebase provides detailed documentation and cross-platform SDKs to help you build and ship apps on Android, iOS, the web, C++, and Unity. Thanks to Firebase's easy-to-use SDK, ready-made UI libraries, and backend services, it is possible to set up the whole authentication process in just a couple of minutes. Firebase allows users to authenticate with their phone number, email, Google, and Facebook accounts. <br /><br />
+                        <ul className="mt-2">Firebase provides detailed documentation and cross-platform SDKs to help you build and ship apps on Android, iOS, the web, C++, and Unity. Thanks to Firebase's easy-to-use SDK, ready-made UI libraries, and backend services, it is possible to set up the whole authentication process in just a couple of minutes. Firebase allows users to authenticate with their phone number, email, Google, and Facebook accounts. <br /><br />
                             Alternative of firebase
                             <ul className='ml-10'>
                                 <li className='list-disc'>Auth0</li>
@@ -42,7 +42,7 @@ const Blog = () => {
                                 <li className='list-disc'>Passport</li>
                                 <li className='list-disc'>Amazon Cognito</li>
                             </ul>
-                        </p>
+                        </ul>
                     </div>
                     <div className="flex items-center justify-between mt-4">
                         <Link rel="noopener noreferrer" href="#" className="hover:underline dark:text-violet-400">Read more</Link>

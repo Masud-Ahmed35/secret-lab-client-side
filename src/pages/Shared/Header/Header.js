@@ -2,9 +2,20 @@ import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import './Header.css'
 import logo from '../../../assets/images/logo.png'
+import { useContext } from 'react';
+import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
+import { FaUserAlt } from "react-icons/fa";
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.error(error))
+    }
 
     return (
         <div className="bg-slate-300">
@@ -25,7 +36,7 @@ const Header = () => {
                             <NavLink
                                 to="/home"
                                 aria-label="Home"
-                                className="font-bold tracking-wide text-amber-600 text-lg border-b-2 rounded-lg px-2"
+                                className="font-bold tracking-wide text-amber-600 text-lg px-2"
                             >
                                 Home
                             </NavLink>
@@ -34,7 +45,7 @@ const Header = () => {
                             <NavLink
                                 to="/courses"
                                 aria-label="Courses"
-                                className="font-bold tracking-wide text-amber-600 text-lg border-b-2 rounded-lg px-2"
+                                className="font-bold tracking-wide text-amber-600 text-lg px-2"
                             >
                                 Courses
                             </NavLink>
@@ -43,7 +54,7 @@ const Header = () => {
                             <NavLink
                                 to="/faq"
                                 aria-label="FAQ"
-                                className="font-bold tracking-wide text-amber-600 text-lg border-b-2 rounded-lg px-2"
+                                className="font-bold tracking-wide text-amber-600 text-lg px-2"
                             >
                                 FAQ
                             </NavLink>
@@ -52,7 +63,7 @@ const Header = () => {
                             <NavLink
                                 to="/blog"
                                 aria-label="Blog"
-                                className="font-bold tracking-wide text-amber-600 text-lg border-b-2 rounded-lg px-2"
+                                className="font-bold tracking-wide text-amber-600 text-lg px-2"
                             >
                                 Blog
                             </NavLink>
@@ -61,29 +72,52 @@ const Header = () => {
                             <NavLink
                                 to="/about"
                                 aria-label="About us"
-                                className="font-bold tracking-wide text-amber-600 text-lg border-b-2 rounded-lg px-2"
+                                className="font-bold tracking-wide text-amber-600 text-lg px-2"
                             >
                                 About us
                             </NavLink>
                         </li>
-                        <li>
-                            <NavLink
-                                to="/login"
-                                aria-label="Login"
-                                className="font-bold tracking-wide text-amber-600 text-lg border-b-2 rounded-lg px-2"
-                            >
-                                Login
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink
-                                to="/profile"
-                                aria-label="Profile"
-                                className="font-bold tracking-wide text-amber-600 text-lg border-b-2 rounded-lg px-2"
-                            >
-                                Profile
-                            </NavLink>
-                        </li>
+                        {
+                            user?.email ?
+                                <>
+                                    <li>
+                                        <button
+                                            onClick={handleLogOut}
+                                            aria-label="Log Out"
+                                            className="font-bold tracking-wide text-amber-600 text-lg px-2"
+                                        >
+                                            Log Out
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <NavLink
+                                            to="/profile"
+                                            aria-label="Profile"
+                                            className="font-bold tracking-wide text-amber-600 text-lg px-2"
+                                        >
+                                            {
+                                                user?.photoURL ?
+                                                    <img className='h-10 rounded-full' src={user.photoURL} alt="" />
+                                                    :
+                                                    <FaUserAlt />
+                                            }
+                                        </NavLink>
+                                    </li>
+                                </>
+                                :
+                                <>
+                                    <li>
+                                        <NavLink
+                                            to="/login"
+                                            aria-label="Login"
+                                            className="font-bold tracking-wide text-amber-600 text-lg px-2"
+                                        >
+                                            Login
+                                        </NavLink>
+                                    </li>
+                                </>
+                        }
+
                     </ul>
                     <div className="lg:hidden">
                         <button
@@ -186,24 +220,48 @@ const Header = () => {
                                                     About us
                                                 </NavLink>
                                             </li>
-                                            <li>
-                                                <NavLink
-                                                    to="/login"
-                                                    aria-label="login"
-                                                    className="font-bold tracking-wide text-gray-700"
-                                                >
-                                                    Login
-                                                </NavLink>
-                                            </li>
-                                            <li>
-                                                <NavLink
-                                                    to="/profile"
-                                                    aria-label="Profile"
-                                                    className="font-bold tracking-wide text-gray-700"
-                                                >
-                                                    Profile
-                                                </NavLink>
-                                            </li>
+                                            {
+                                                user?.email ?
+                                                    <>
+                                                        <li>
+                                                            <button
+                                                                onClick={handleLogOut}
+                                                                aria-label="Logout"
+                                                                className="font-bold tracking-wide text-gray-700"
+                                                            >
+                                                                Log Out
+                                                            </button>
+                                                        </li>
+                                                        <li>
+                                                            <NavLink
+                                                                to="/profile"
+                                                                aria-label="Profile"
+                                                                className="font-bold tracking-wide text-gray-700"
+                                                            >
+                                                                {
+                                                                    user?.photoURL ?
+                                                                        <img className='w-10 rounded-full' src={user.photoURL} alt="" />
+                                                                        :
+                                                                        <FaUserAlt />
+                                                                }
+                                                            </NavLink>
+                                                        </li>
+                                                    </>
+                                                    :
+                                                    <>
+                                                        <li>
+                                                            <NavLink
+                                                                to="/login"
+                                                                aria-label="login"
+                                                                className="font-bold tracking-wide text-gray-700"
+                                                            >
+                                                                Login
+                                                            </NavLink>
+                                                        </li>
+                                                    </>
+
+                                            }
+
                                         </ul>
                                     </nav>
                                 </div>
