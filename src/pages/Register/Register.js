@@ -10,7 +10,7 @@ const Register = () => {
     const [photo, setPhoto] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const { createUser } = useContext(AuthContext);
+    const { createUser, addNameAndPhoto } = useContext(AuthContext);
 
     const handleName = e => {
         setName(e.target.value);
@@ -53,6 +53,8 @@ const Register = () => {
             .then(result => {
                 console.log(result.user);
                 toast.success('Successfully Create Your Account')
+
+                addNameAndPhoto(name, photo);
             })
             .catch(error => {
                 toast.error(error.message);
