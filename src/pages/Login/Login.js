@@ -9,15 +9,15 @@ const Login = () => {
                     <h1 className="my-3 text-4xl font-bold">Sign in</h1>
                     <p className="text-sm dark:text-gray-400">Sign in to access your account</p>
                 </div>
-                <form novalidate="" action="" className="space-y-8 ng-untouched ng-pristine ng-valid">
+                <form className="space-y-8 ng-untouched ng-pristine ng-valid">
                     <div className="space-y-4">
                         <div>
-                            <label for="email" className="block mb-2 text-sm">Email address</label>
+                            <label htmlFor="email" className="block mb-2 text-sm">Email address</label>
                             <input type="email" name="email" id="email" placeholder="example@gmail.com" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 text-gray-900" />
                         </div>
                         <div>
                             <div className="mb-2">
-                                <label for="password" className="text-sm">Password</label>
+                                <label htmlFor="password" className="text-sm">Password</label>
                             </div>
                             <input type="password" name="password" id="password" placeholder="********" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 text-gray-900" />
                             <div className="flex justify-end text-xs text-gray-400 mt-1">
