@@ -18,13 +18,19 @@ This is online based quality learning web application. Here, you can choose a co
 ### Live Website Link: https://quizzes-lab.netlify.app/
 
 ### Api Link
-* Default Api: https://openapi.programming-hero.com/api/quiz
-* Api With Id: https://openapi.programming-hero.com/api/quiz/${Id}
+* Default Api: http://localhost:7001/courses
+* Api With Id: http://localhost:7001/courses/${id}
 
 ## Resources & Credits
 * [ReactJs](https://reactjs.org/).
 * [Tailwind css](https://tailwindcss.com/docs/installation)
 * Tailwind Component [Mamba UI](https://www.mambaui.com/components)
+
+
+
+
+
+
 
 
 
