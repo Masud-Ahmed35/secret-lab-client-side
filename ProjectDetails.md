@@ -1,4 +1,5 @@
 
+
 # Secret Lab
 
 This is online based quality learning web application. Here, you can choose a course what you want, there are several courses about web programming. You can select a course to explore this and also it will be helpfull for your future career in development section. There are also a premimum part where you will get some extra feature.
@@ -25,11 +26,6 @@ This is online based quality learning web application. Here, you can choose a co
 * [ReactJs](https://reactjs.org/).
 * [Tailwind css](https://tailwindcss.com/docs/installation)
 * Tailwind Component [Mamba UI](https://www.mambaui.com/components)
-
-
-
-
-
 
 
 
