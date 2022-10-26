@@ -5,6 +5,7 @@ import logo from '../../../assets/images/logo.png'
 import { useContext } from 'react';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import { FaUserAlt } from "react-icons/fa";
+import toast from 'react-hot-toast'
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,8 +14,10 @@ const Header = () => {
 
     const handleLogOut = () => {
         logOut()
-            .then(() => { })
-            .catch(error => console.error(error))
+            .then(() => {
+                toast.error('Log Out Successfully');
+            })
+            .catch(error => toast.error(error.message))
     }
 
     return (
