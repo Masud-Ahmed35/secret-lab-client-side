@@ -7,7 +7,7 @@ const Courses = () => {
     const navigate = useNavigate();
 
     return (
-        <div className='divide-x-2 w-[90%] mx-auto mt-10 grid grid-cols-5 '>
+        <div className='divide-x-2 w-[90%] mx-auto mt-10 md:grid grid-cols-5 '>
             {/* ---------------left side bar-------------*/}
             <div className='col-span-1 mr-5'>
                 {
@@ -16,7 +16,7 @@ const Courses = () => {
             </div>
 
             {/* -------------Courses Card Section----------- */}
-            <div className='col-span-4 grid grid-cols-3'>
+            <div className='col-span-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
                 {
                     courses.map(course => <Course
                         key={course.id}

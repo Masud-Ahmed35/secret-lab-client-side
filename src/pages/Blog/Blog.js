@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Blog = () => {
     return (
-        <div>
+        <div className='mb-10'>
             <div className="mt-10 dark:bg-gray-800 dark:text-gray-100">
                 <div className="container border-4 max-w-4xl px-10 py-6 mx-auto rounded-lg shadow-sm dark:bg-gray-900">
                     <div className="flex items-center justify-between">

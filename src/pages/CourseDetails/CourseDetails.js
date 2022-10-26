@@ -14,8 +14,8 @@ const CourseDetails = () => {
     }
 
     return (
-        <div className='mt-10' ref={ref}>
-            <div className="max-w-lg  p-4 shadow-md bg-gray-200 text-gray-900">
+        <div className='mt-10 ml-10 mb-10 lg:ml-24' ref={ref}>
+            <div className="max-w-lg p-4 shadow-md bg-gray-200 text-gray-900">
                 <div className="flex justify-between pb-2 border-b-2 rounded-lg border-red-600">
                     <div className="flex items-center">
                         <Link className="text-2xl font-bold text-gray-900">{title}</Link>

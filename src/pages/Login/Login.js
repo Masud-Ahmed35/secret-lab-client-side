@@ -73,8 +73,8 @@ const Login = () => {
 
 
     return (
-        <div>
-            <div className=" mt-10 flex flex-col max-w-md mx-auto p-6 rounded-md sm:p-10 bg-gray-800 text-gray-100">
+        <div className=''>
+            <div className="mt-10 mb-10 flex flex-col max-w-md mx-auto p-6 rounded-md sm:p-10 bg-gray-800 text-gray-100">
                 <div className="mb-8 text-center">
                     <h1 className="my-3 text-4xl font-bold">Sign in</h1>
                     <p className="text-sm dark:text-gray-400">Sign in to access your account</p>

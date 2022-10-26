@@ -85,7 +85,7 @@ const Header = () => {
                                         <button
                                             onClick={handleLogOut}
                                             aria-label="Log Out"
-                                            className="font-bold tracking-wide text-amber-600 text-lg px-2"
+                                            className="border-2 border-slate-600 rounded-lg font-bold tracking-wide text-amber-600 text-lg px-2"
                                         >
                                             Log Out
                                         </button>
@@ -111,7 +111,7 @@ const Header = () => {
                                         <NavLink
                                             to="/login"
                                             aria-label="Login"
-                                            className="font-bold tracking-wide text-amber-600 text-lg px-2"
+                                            className="border-2 border-slate-600 rounded-lg pb-1 font-bold tracking-wide text-amber-600 text-lg px-2"
                                         >
                                             Login
                                         </NavLink>

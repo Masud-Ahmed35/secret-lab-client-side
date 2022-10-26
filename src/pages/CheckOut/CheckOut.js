@@ -9,7 +9,7 @@ const CheckOut = () => {
     const { title, description } = data;
 
     return (
-        <div>
+        <div className='mb-14'>
             {
                 user && (user?.emailVerified || user?.providerData[0]?.providerId === "github.com") ?
                     <>
