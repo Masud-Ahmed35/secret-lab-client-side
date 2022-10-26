@@ -5,8 +5,8 @@ import coverPhoto from '../../assets/images/coverPhoto.jpg'
 const Home = () => {
     return (
         <section>
-            <div className='mt-10'>
-                <div className="bg-violet-100">
+            <div className=''>
+                <div className="bg-violet-50">
                     <div className="container flex flex-col items-center px-4 py-16 pb-24 mx-auto text-center lg:pb-56 md:py-32 md:px-10 lg:px-32 text-gray-900">
                         <h1 className="text-5xl font-bold leading-none sm:text-6xl xl:max-w-3xl text-gray-900">Learn Anytime, Anywhere <br /><span>And</span> <br /><span className='text-4xl sm:text-5xl xl:max-w-2xl'>Accelerate Your Future</span></h1>
                         <p className="mt-6 mb-8 text-lg sm:mb-12 xl:max-w-3xl text-gray-900">It is an online educational platform for 'IT' students. We offer several courses. And there are lot of flexibility and opportunity. You must try this at least ones.</p>
@@ -19,7 +19,7 @@ const Home = () => {
                 <img src={coverPhoto} alt="" className="w-3/4 h-[600px] mx-auto mb-12 -mt-20 rounded-lg shadow-md lg:-mt-40 dark:bg-gray-500" />
             </div>
 
-            <div className="px-4 rounded-xl mb-10 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-12 bg-gray-800 text-gray-100">
+            <div className="px-4 rounded-xl mb-10 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-12 bg-stone-200 text-gray-900">
                 <h2 className="mb-12 text-4xl font-bold leading-none text-center">What do we offer in our courses?</h2>
                 <ul className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
                     <li className="flex items-center space-x-2">
@@ -89,8 +89,8 @@ const Home = () => {
             </div>
 
             {/* -----------------------contact section------------------------  */}
-            <section className="py-6 bg-gray-800 text-gray-50">
-                <div className="grid max-w-6xl grid-cols-1 px-6 mx-auto lg:px-8 md:grid-cols-2 md:divide-x">
+            <section className="py-6 bg-stone-300 text-gray-900">
+                <div className="grid max-w-6xl grid-cols-1 px-6 mx-auto lg:px-8 md:grid-cols-2 md:divide-x-2">
                     <div className="py-6 md:py-0 md:px-6">
                         <h1 className="text-4xl font-bold">Get in touch</h1>
                         <p className="pt-2 pb-4">Fill in the form to start a conversation</p>
@@ -129,7 +129,7 @@ const Home = () => {
                             <span className="mb-2">Message</span>
                             <textarea rows="3" className="block w-full rounded-md focus:ring focus:ring-opacity-75 focus:ring-violet-400 dark:bg-gray-800"></textarea>
                         </label>
-                        <button type="button" className="self-center px-8 py-3 text-lg rounded focus:ring hover:ring focus:ring-opacity-75 bg-violet-400 text-gray-900 focus:ring-violet-400 hover:ring-violet-400">Submit</button>
+                        <button type="button" className="self-center px-8 py-3 text-lg rounded focus:ring hover:ring focus:ring-opacity-75 bg-amber-500 text-gray-900 focus:ring-violet-400 hover:ring-slate-500">Submit</button>
                     </form>
                 </div>
             </section>

@@ -11,7 +11,7 @@ const auth = getAuth(app);
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
-    const [theme, setTheme] = useState('light-theme');
+    const [theme, setTheme] = useState(true);
 
     const googleLogin = (provider) => {
         setLoading(true);

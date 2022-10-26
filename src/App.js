@@ -7,10 +7,9 @@ import { AuthContext } from './contexts/AuthProvider/AuthProvider';
 
 function App() {
   const { theme } = useContext(AuthContext);
-  console.log('Inside app: ', theme);
 
   return (
-    <div className={`theme`}>
+    <div className={theme ? 'light' : 'dark'}>
       <RouterProvider router={router}></RouterProvider>
       <Toaster></Toaster>
     </div>

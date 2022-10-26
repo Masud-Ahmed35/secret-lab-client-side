@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom'
 
 const Footer = () => {
     return (
-        <footer className='px-4 divide-y  text-gray-800 bg-slate-100 mt-11'>
+        <footer className='px-4 divide-y  text-gray-800 bg-slate-100'>
             <div className='container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0'>
                 <div className='lg:w-1/3'>
                     <Link to='/' className='flex justify-center space-x-3 lg:justify-start'>
-                        <div className='flex items-center justify-center w-12 h-12 rounded-full bg-cyan-200'>
+                        <div className='flex items-center justify-center w-12 h-12 rounded-full bg-stone-700'>
                             <svg
                                 xmlns='http://www.w3.org/2000/svg'
                                 viewBox='0 0 32 32'
@@ -26,10 +26,10 @@ const Footer = () => {
                     <div className='space-y-3'>
                         <ul className='space-y-1'>
                             <li>
-                                <Link to='/about'>Features</Link>
+                                <Link to='/faq'>Features</Link>
                             </li>
                             <li>
-                                <Link to='/about'>Integrations</Link>
+                                <Link to='/faq'>Integrations</Link>
                             </li>
                             <li>
                                 <Link to='/faq'>Pricing</Link>
@@ -42,23 +42,23 @@ const Footer = () => {
                     <div className='space-y-3'>
                         <ul className='space-y-1'>
                             <li>
-                                <Link to='/about'>Privacy</Link>
+                                <Link to='/faq'>Privacy</Link>
                             </li>
                             <li>
-                                <Link to='/about'>Terms of Service</Link>
+                                <Link to='/faq'>Terms of Service</Link>
                             </li>
                         </ul>
                     </div>
                     <div className='space-y-3'>
                         <ul className='space-y-1'>
                             <li>
-                                <Link to='/about'>Public API</Link>
+                                <Link to='/faq'>Public API</Link>
                             </li>
                             <li>
-                                <Link to='/about'>Documentation</Link>
+                                <Link to='/faq'>Documentation</Link>
                             </li>
                             <li>
-                                <Link to='/about'>Guides</Link>
+                                <Link to='/faq'>Guides</Link>
                             </li>
                         </ul>
                     </div>
