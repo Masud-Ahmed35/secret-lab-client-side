@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import coverPhoto from '../../assets/images/coverPhoto.jpg'
 
 const Home = () => {
@@ -10,8 +11,8 @@ const Home = () => {
                         <h1 className="text-5xl font-bold leading-none sm:text-6xl xl:max-w-3xl text-gray-900">Learn Anytime, Anywhere <br /><span>And</span> <br /><span className='text-4xl sm:text-5xl xl:max-w-2xl'>Accelerate Your Future</span></h1>
                         <p className="mt-6 mb-8 text-lg sm:mb-12 xl:max-w-3xl text-gray-900">It is an online educational platform for 'IT' students. We offer several courses. And there are lot of flexibility and opportunity. You must try this at least ones.</p>
                         <div className="flex flex-wrap justify-center">
-                            <button type="button" className="px-8 py-3 m-2 text-lg font-semibold rounded bg-gray-800 text-gray-50">Get started</button>
-                            <button type="button" className="px-8 py-3 m-2 text-lg border rounded border-gray-700 text-gray-900">Learn more</button>
+                            <Link to='/courses'><button type="button" className="px-8 py-3 m-2 text-lg font-semibold rounded bg-gray-800 text-gray-50">Get started</button></Link>
+                            <Link to='/faq'><button type="button" className="px-8 py-3 m-2 text-lg border rounded border-gray-700 text-gray-900">Learn more</button></Link>
                         </div>
                     </div>
                 </div>
@@ -118,11 +119,11 @@ const Home = () => {
                     <form className="flex flex-col py-6 space-y-6 md:py-0 md:px-6 ng-untouched ng-pristine ng-valid">
                         <label className="block">
                             <span className="mb-2">Full name</span>
-                            <input type="text" placeholder="Professor M" className="block w-full rounded-md shadow-sm focus:ring focus:ring-opacity-75 pl-3 pb-1 focus:ring-violet-400 dark:bg-gray-800" />
+                            <input type="text" placeholder="Type Your Name" className="block w-full rounded-md shadow-sm focus:ring focus:ring-opacity-75 pl-3 pb-1 focus:ring-violet-400 dark:bg-gray-800" />
                         </label>
                         <label className="block">
                             <span className="mb-2">Email address</span>
-                            <input type="email" placeholder="professor@gmail.com" className="block w-full rounded-md shadow-sm focus:ring focus:ring-opacity-75 pl-3 pb-1 focus:ring-violet-400 dark:bg-gray-800" />
+                            <input type="email" placeholder="example@gmail.com" className="block w-full rounded-md shadow-sm focus:ring focus:ring-opacity-75 pl-3 pb-1 focus:ring-violet-400 dark:bg-gray-800" />
                         </label>
                         <label className="block">
                             <span className="mb-2">Message</span>

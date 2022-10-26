@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast'
 import { useContext } from 'react';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
@@ -11,6 +11,9 @@ const Register = () => {
     const [photo, setPhoto] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
     const { createUser, addNameAndPhoto, verifyEmail, googleLogin } = useContext(AuthContext);
 
     const googleProvider = new GoogleAuthProvider();
@@ -21,6 +24,7 @@ const Register = () => {
             .then(result => {
                 console.log(result.user);
                 toast.success('Login Successful with Google')
+                navigate(from, { replace: true });
             })
             .catch(error => toast.error(error.message))
     }
@@ -66,6 +70,7 @@ const Register = () => {
             .then(result => {
                 console.log(result.user);
                 toast.success('Successfully Create Your Account')
+                navigate(from, { replace: true });
 
                 addNameAndPhoto(name, photo)
                     .then(() => {
