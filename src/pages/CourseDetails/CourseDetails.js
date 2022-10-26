@@ -4,7 +4,11 @@ import { Link, useLoaderData, useNavigate } from 'react-router-dom';
 const CourseDetails = () => {
     const data = useLoaderData();
     const navigate = useNavigate();
-    const { title, img, description, ratings, view, comments } = data;
+    const { id, title, img, description, ratings, view, comments } = data;
+
+    const handleNavigate = () => {
+        navigate(`/checkout/${id}`)
+    }
 
     return (
         <div className='mt-10'>
@@ -28,7 +32,10 @@ const CourseDetails = () => {
                         <p>Comments: {comments}</p>
                     </div>
                 </div>
-                <button onClick={() => navigate('/courses')} className="btn btn-outline btn-success w-full normal-case text-lg">Go Back To Previous Page</button>
+                <div className='flex justify-between'>
+                    <button onClick={() => navigate('/courses')} className="btn btn-outline w-[45%] normal-case text-lg">Previous Page</button>
+                    <button onClick={handleNavigate} className="btn btn-outline btn-success w-[45%] normal-case text-lg">Get Premium Access</button>
+                </div>
             </div>
         </div>
     );

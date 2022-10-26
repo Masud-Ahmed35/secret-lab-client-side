@@ -8,7 +8,7 @@ import toast from 'react-hot-toast'
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const { googleLogin, signIn } = useContext(AuthContext);
+    const { googleLogin, signIn, resetPassword } = useContext(AuthContext);
 
     const googleProvider = new GoogleAuthProvider();
 
@@ -41,6 +41,16 @@ const Login = () => {
             })
     }
 
+    const handleResetPassword = () => {
+        if (!email) {
+            toast.error('Please Provide a Email Address');
+            return;
+        }
+        resetPassword(email)
+            .then(() => toast.success('Reset Password Email has been Sent to Your Email'))
+            .catch(error => toast.error(error.message))
+    }
+
 
     return (
         <div>
@@ -61,7 +71,7 @@ const Login = () => {
                             </div>
                             <input onBlur={handlePassword} type="password" name="password" id="password" placeholder="********" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 text-gray-900" required />
                             <div className="flex justify-end text-xs text-gray-400 mt-1">
-                                <Link to='/'>Forgot Password?</Link>
+                                <Link onClick={handleResetPassword} to='/'>Forgot Password?</Link>
                             </div>
                         </div>
                     </div>
