@@ -11,6 +11,7 @@ const auth = getAuth(app);
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [theme, setTheme] = useState('light-theme');
 
     const googleLogin = (provider) => {
         setLoading(true);
@@ -66,7 +67,9 @@ const AuthProvider = ({ children }) => {
         addNameAndPhoto,
         verifyEmail,
         resetPassword,
-        logOut
+        logOut,
+        setTheme,
+        theme
     };
     return (
         <AuthContext.Provider value={authInfo}>

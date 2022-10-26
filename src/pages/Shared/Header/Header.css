@@ -1,3 +1,11 @@
 .active {
     color: green;
 }
+
+.dark-theme {
+    background-color: gray;
+}
+
+.light-theme {
+    background-color: white;
+}

@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { createRef } from 'react';
 import { Link, useLoaderData, useNavigate } from 'react-router-dom';
+import Pdf from "react-to-pdf";
+
+const ref = createRef();
 
 const CourseDetails = () => {
     const data = useLoaderData();
@@ -11,13 +14,17 @@ const CourseDetails = () => {
     }
 
     return (
-        <div className='mt-10'>
-            <div className="max-w-lg mx-auto p-4 shadow-md bg-gray-200 text-gray-900">
+        <div className='mt-10' ref={ref}>
+            <div className="max-w-lg  p-4 shadow-md bg-gray-200 text-gray-900">
                 <div className="flex justify-between pb-2 border-b-2 rounded-lg border-red-600">
                     <div className="flex items-center">
                         <Link className="text-2xl font-bold text-gray-900">{title}</Link>
                     </div>
-                    <button className="btn btn-outline normal-case">Download pdf</button>
+                    <Pdf targetRef={ref} filename={`Course-${id}.pdf`}>
+                        {
+                            ({ toPdf }) => <button onClick={toPdf} className="btn btn-outline normal-case">Download pdf</button>
+                        }
+                    </Pdf>
                 </div>
                 <div className="space-y-4 mt-4 mb-5">
                     <div className="space-y-2">
@@ -34,7 +41,7 @@ const CourseDetails = () => {
                 </div>
                 <div className='flex justify-between'>
                     <button onClick={() => navigate('/courses')} className="btn btn-outline w-[45%] normal-case text-lg">Previous Page</button>
-                    <button onClick={handleNavigate} className="btn btn-outline btn-success w-[45%] normal-case text-lg">Get Premium Access</button>
+                    <button onClick={handleNavigate} className="btn btn-outline btn-success w-[45%] normal-case text-lg">Premium Access</button>
                 </div>
             </div>
         </div>
