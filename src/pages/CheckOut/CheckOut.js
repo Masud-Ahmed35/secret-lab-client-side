@@ -11,7 +11,7 @@ const CheckOut = () => {
     return (
         <div>
             {
-                user && user?.emailVerified ?
+                user && (user?.emailVerified || user?.providerData[0]?.providerId === "github.com") ?
                     <>
                         <div className="max-w-xs mx-auto mt-10 p-6 rounded-md shadow-md bg-gray-200 text-gray-900">
                             <div className="flex space-x-4">

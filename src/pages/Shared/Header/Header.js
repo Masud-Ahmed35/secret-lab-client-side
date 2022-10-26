@@ -79,7 +79,7 @@ const Header = () => {
                             </label>
                         </li>
                         {
-                            user?.email ?
+                            user?.uid ?
                                 <>
                                     <li>
                                         <button
@@ -221,7 +221,7 @@ const Header = () => {
                                                 </label>
                                             </li>
                                             {
-                                                user?.email ?
+                                                user?.uid ?
                                                     <>
                                                         <li>
                                                             <button
