@@ -15,7 +15,7 @@ This is online based quality learning web application. Here, you can choose a co
 * Fully Responsive
 * User Friendly
 
-### Live Website Link: https://quizzes-lab.netlify.app/
+### Live Website Link: https://secret-web-1e169.web.app/
 
 ### Api Link
 * Default Api: http://localhost:7001/courses
