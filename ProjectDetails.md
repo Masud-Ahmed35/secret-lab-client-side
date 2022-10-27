@@ -22,7 +22,9 @@ This is online based quality learning web application. Here, you can choose a co
 ## Resources & Credits
 * [ReactJs](https://reactjs.org/).
 * [Tailwind css](https://tailwindcss.com/docs/installation)
-* Tailwind Component [Mamba UI](https://www.mambaui.com/components)
+* [Mamba UI](https://www.mambaui.com/components)
+* [Nodejs](https://nodejs.org/en/about/)
+* [expressjs](https://expressjs.com/en/starter/installing.html)
 
 
 
