@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Course = ({ course }) => {
-    const { id, img, title, view, ratings, badge } = course;
+    const { id, img, price, title, view, ratings, badge } = course;
     const navigate = useNavigate();
 
     const handleNavigate = () => {
@@ -16,7 +16,7 @@ const Course = ({ course }) => {
                 <div className="flex flex-col justify-between p-6 space-y-8">
                     <div className="space-y-2">
                         <h2 className="text-2xl font-semibold tracking-wide relative">{title}<span className="absolute top-1 badge badge-secondary badge-sm">{badge}</span></h2>
-                        <p className="dark:text-gray-100">{ }</p>
+                        <p className="dark:text-gray-100">Course Fees: <span className='text-lg font-bold text-orange-600'>${price}</span></p>
                         <div className='flex justify-between'>
                             <p>Ratings: {ratings} star</p>
                             <p>Views: {view}</p>

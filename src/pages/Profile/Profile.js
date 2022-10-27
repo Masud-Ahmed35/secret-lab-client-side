@@ -23,8 +23,12 @@ const Profile = () => {
             .then(() => {
                 toast.success('Update Your Name & Photo')
 
-                // Refresh page for instant rendaring
+                // -----------------------------------------------------------------------
+                // --------------Refresh page for instant rendering-----------------------
+
                 window.location.reload(false);
+                // -------------------------------------------------------------------------
+
                 navigate('/profile');
 
             })

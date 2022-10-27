@@ -1,5 +1,6 @@
 import React from 'react';
 import { useContext } from 'react';
+import toast from 'react-hot-toast';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
@@ -25,7 +26,8 @@ const CheckOut = () => {
                                 <span className="block text-xs font-medium tracking-widest uppercase text-stone-600">Selected Course:</span>
                                 <h2 className="text-xl font-semibold text-amber-700 tracking-wide">{title}</h2>
                             </div>
-                            <p className="dark:text-gray-100">{description}</p>
+                            <p className="dark:text-gray-100 mb-5">{description}</p>
+                            <button onClick={() => toast.success('Enrollment Successful')} className="btn btn-outline w-full normal-case text-lg">Enrol Now</button>
                         </div>
                     </>
                     :
