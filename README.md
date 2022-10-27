@@ -17,9 +17,7 @@ This is online based quality learning web application. Here, you can choose a co
 
 ### Live Website Link: https://secret-web-1e169.web.app/
 
-### Api Link
-* Default Api: http://localhost:7001/courses
-* Api With Id: http://localhost:7001/courses/${id}
+### Api Link: https://assignment-10-server-side-eta.vercel.app/courses
 
 ## Resources & Credits
 * [ReactJs](https://reactjs.org/).
